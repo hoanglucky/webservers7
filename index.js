@@ -21,19 +21,18 @@ app.get("/", (req, res) => res.render("home"));
 
 const PLC_CONFIG = {
     port: 102,
-    host: "192.168.0.1",
+    host: "192.168.0.2",
     rack: 0,
     slot: 1,
     timeout: 3000
 };
 
 const TAGS = {
-    heartbeat: 'DB1,X0.0',
-    motorRun: 'DB1,X0.1',
-    temp: 'DB1,REAL4',
-    pressure: 'DB1,INT8',
-    speed: 'DB1,DINT12',
-    product: 'DB1,S20.30'
+    HMI1: 'DB1,REAL0',
+    HMI2: 'DB1,REAL4',
+    HMI3: 'DB1,REAL8',
+    HMI4: 'DB1,REAL12',
+    HMI5: 'DB1,REAL16'
 };
 
 const SCAN_INTERVAL = 1000;
