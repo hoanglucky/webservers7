@@ -1,0 +1,20 @@
+{
+  "name": "plcserver",
+  "version": "1.0.1",
+  "description": "This is webserver Lo dot rac Minh Tan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "install": "^0.13.0",
+    "jquery": "^4.0.0",
+    "lodash": "^4.17.23",
+    "nodes7": "^0.3.18",
+    "socket.io": "^4.8.3"
+  }
+}

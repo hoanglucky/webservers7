@@ -1,0 +1,89 @@
+<!-- Phần Header của Website -->
+
+<head>
+    <!-- ////////////// CHƯƠNG TRÌNH HỆ THỐNG //////////////  -->
+    <title>Scada hệ thống giám sát trên internet</title>
+    <script src="jquery.js"></script>
+    <script src="js/FC1_Common.js"></script>
+    <script src="js/FC2_UserManagement.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+        var socket = io("localhost:3000") // IP tĩnh (hoặc IP động, hoặc localhost)
+    </script>
+    <!-- ////////////// GỌI CÁC CSS //////////////  -->
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="CSS/slidebar.css">
+    <link rel="stylesheet" href="CSS/screen_main.css">
+    <link rel="stylesheet" href="CSS/screen_1.css">
+    <link rel="stylesheet" href="CSS/screen_2.css">
+</head>
+<!-- Phần thân của website -->
+<!-- ////////////// CHƯƠNG TRÌNH ĐĂNG NHẬP HỆ THỐNG //////////////  -->
+
+
+<body>
+    <div id="div_login">
+        <div id="id01" class="modal">
+            <form id="modal-content1" class="modal-content animate">
+                <div id="img_container" class="imgcontainer">
+                    <span id="closebtt" onclick="document.getElementById('id01').style.display='none'; logout();"
+                        class="close" title="Close Modal">&times;</span>
+                    <img decoding="async" id="img_avatar" src="images/user.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div id="log_container" class="container">
+                    <label for="uname"><b>Username</b></label>
+                    <input id="inputuser" type="text" placeholder="Enter Username" name="uname" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input id="inputpass" type="password" placeholder="Enter Password" name="psw" required>
+
+                    <button id="bttlogin1" type="button" onclick="login();">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                </div>
+
+                <div id="login_container" class="container" style="background-color:#f1f1f1">
+                    <button id="bttcancle" type="button"
+                        onclick="document.getElementById('id01').style.display='none'; logout();"
+                        class="cancelbtn">Cancel</button>
+                    <span id="psw" class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ////////////// Code cho slidebar////////////// -->
+    <div id="slidebar">
+        <!--Nút đăng nhập/đăng xuất-->
+        <button id="bttLogin" class="btn" onclick="login();
+        window.location.reload();
+">ĐĂNG NHẬP</button>
+        <button id="bttLogout" class="btn" onclick="logout();
+">ĐĂNG XUẤT</button>
+        <!--Nút chọn màn hình chính-->
+        <button id="btt_Screen_Main" onclick="
+            fn_ScreenChange('Screen_Main','Screen_1','Screen_2');
+        ">MÀN HÌNH CHÍNH</button>
+        <!--Nút chọn màn hình 1-->
+        <button id="btt_Screen_1" onclick="
+            fn_ScreenChange('Screen_1','Screen_Main','Screen_2');
+        ">MÀN HÌNH 1</button>
+        <!--Nút chọn màn hình 2-->
+        <button id="btt_Screen_2" onclick="
+            fn_ScreenChange('Screen_2','Screen_Main','Screen_1');
+        ">MÀN HÌNH 2</button>
+    </div>
+    <!-- //////////////Code cho màn hình chính////////////// -->
+    <div id="Screen_Main">
+        <p>Đây là màn chính</p>
+    </div>
+    <!-- //////////////Code cho màn hình 1////////////// -->
+    <div id="Screen_1">
+        <p>Đây là màn 1</p>
+    </div>
+    <!-- //////////////Code cho màn hình 2////////////// -->
+    <div id="Screen_2">
+        <p>Đây là màn 2</p>
+    </div>
+</body>
